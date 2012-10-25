@@ -1,0 +1,33 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0" metadata-complete="true">
+
+	<!-- Servlet for REST web service -->
+	<servlet>
+		<servlet-name>CommandRestServlet</servlet-name>
+		<servlet-class>com.emo.web.CommandRestServlet</servlet-class>
+	</servlet>
+	
+	<!-- Servlet for Hessian web services -->
+	<servlet>
+		<servlet-name>CommandHessianServlet</servlet-name>
+		<servlet-class>com.emo.web.CommandHessianServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CommandHessianServlet</servlet-name>
+		<url-pattern>/commands/hessian</url-pattern>
+	</servlet-mapping>
+
+	<!-- Listener for loading spring application context -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+
+	<listener>
+		<description>ApplicationContextLoaderListener</description>
+		<listener-class>org.springframework.web.context.ContextLoade rListener</listener-class>
+	</listener>
+
+</web-app>
