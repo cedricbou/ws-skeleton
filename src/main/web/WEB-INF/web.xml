@@ -22,12 +22,12 @@
 	<!-- Listener for loading spring application context -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/applicationContext.xml</param-value>
+		<param-value>/WEB-INF/applicationContext-*.xml</param-value>
 	</context-param>
 
 	<listener>
 		<description>ApplicationContextLoaderListener</description>
-		<listener-class>org.springframework.web.context.ContextLoade rListener</listener-class>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
 </web-app>
