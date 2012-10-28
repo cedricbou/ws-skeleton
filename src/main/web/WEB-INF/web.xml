@@ -6,13 +6,19 @@
 	<!-- Servlet for REST web service -->
 	<servlet>
 		<servlet-name>CommandRestServlet</servlet-name>
-		<servlet-class>com.emo.web.CommandRestServlet</servlet-class>
+		<servlet-class>com.emo.skeleton.web.ProcessCommandRestServlet</servlet-class>
 	</servlet>
 	
+	<!-- Servlet for REST web service -->
+	<servlet>
+		<servlet-name>CommandsRestServlet</servlet-name>
+		<servlet-class>com.emo.skeleton.web.ProcessCommandsRestServlet</servlet-class>
+	</servlet>
+
 	<!-- Servlet for Hessian web services -->
 	<servlet>
 		<servlet-name>CommandHessianServlet</servlet-name>
-		<servlet-class>com.emo.web.CommandHessianServlet</servlet-class>
+		<servlet-class>com.emo.skeleton.web.CommandHessianServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CommandHessianServlet</servlet-name>

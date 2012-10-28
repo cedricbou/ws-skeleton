@@ -1,0 +1,17 @@
+package com.emo.mains;
+
+import com.emo.utils.EmbeddedServer;
+
+public class WebMain {
+
+	/**
+	 * @param args
+	 * @throws InterruptedException 
+	 */
+	public static void main(String[] args) throws InterruptedException {
+		final EmbeddedServer server = new EmbeddedServer();
+		server.startServer();
+		Thread.sleep(300000);
+	}
+
+}
