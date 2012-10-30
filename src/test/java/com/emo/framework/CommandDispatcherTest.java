@@ -1,23 +1,24 @@
 package com.emo.framework;
 
-import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import javax.inject.Inject;
 
-import com.emo.sample.commands.ClientIsMoving;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.emo.commands.Placebo;
 import com.emo.skeleton.framework.CommandDispatcher;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:applicationContext-init.xml")
 public class CommandDispatcherTest {
-
-	private final ApplicationContext ctx = new ClassPathXmlApplicationContext(
-			"applicationContext-init.xml");
-
+	
+	@Inject
+	private CommandDispatcher dispatcher;
+	
 	@Test
 	public void mustProcessCommand() {
-		CommandDispatcher dispatcher = ctx.getBean(CommandDispatcher.class);
-
-		dispatcher.processCommand(new ClientIsMoving("123", "5 rue de machin", "Lille",
-						59000, "FRA"));
-
+		dispatcher.processCommand(new Placebo());
 	}
 }

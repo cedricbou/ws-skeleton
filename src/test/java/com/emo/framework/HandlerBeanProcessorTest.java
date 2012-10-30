@@ -21,10 +21,11 @@ public class HandlerBeanProcessorTest {
 	public void checkHandlerProcessed() {
 		final List<String> names = Arrays.asList(context.getBeanDefinitionNames());
 				
-		assertTrue("command handler have been added to context", names.contains("clientIsMovingCommandHandler"));
+		assertTrue("command handler have been added to context", names.contains("clientIsMovingHandler"));
 		
 		final HandlerManager manager = (HandlerManager)context.getBean("handlerManager");
 		
+		// TODO: fix, it fails because of class proxying :(
 		assertTrue("handler manager contains handler for ClientIsMovingCommand", manager.handlerFor(ClientIsMoving.class) instanceof ClientIsMovingHandler);
 	}
 }

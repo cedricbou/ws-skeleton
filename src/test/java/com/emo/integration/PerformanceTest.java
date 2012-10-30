@@ -20,7 +20,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.caucho.hessian.client.HessianProxyFactory;
-import com.emo.sample.commands.ClientIsMoving;
+import com.emo.sample.commands.NewClient;
 import com.emo.skeleton.api.CommandApi;
 import com.emo.utils.CommandUtils;
 import com.emo.utils.EmbeddedServer;
@@ -162,8 +162,9 @@ public class PerformanceTest {
 			final long[] responses = new long[max_iterations];
 
 			for (int i = 0; i < max_iterations; ++i) {
-				final ClientIsMoving cmd = CommandUtils.randomClientIsMovingCommand();
+				final NewClient cmd = CommandUtils.randomNewClientCommand();
 				json.put("clientCode", cmd.getClientCode());
+				json.put("name", cmd.getName());
 				json.put("street", cmd.getStreet());
 				json.put("city", cmd.getCity());
 				json.put("zip", cmd.getZip());
@@ -172,7 +173,7 @@ public class PerformanceTest {
 				final long triggered = System.nanoTime();
 
 				given().content(json.toJSONString()).expect()
-						.body(equalTo("ok")).when().post("/commands/rest/ClientIsMoving");
+						.body(equalTo("ok")).when().post("/commands/rest/NewClient");
 
 				responses[i] = System.nanoTime() - triggered;
 			}
@@ -210,15 +211,16 @@ public class PerformanceTest {
 				final JSONArray cmdHolders = new JSONArray();
 				
 				for(int j = 0; j < jsons.length; ++j) {
-					final ClientIsMoving cmd = CommandUtils.randomClientIsMovingCommand();
+					final NewClient cmd = CommandUtils.randomNewClientCommand();
 					jsons[j].put("clientCode", cmd.getClientCode());
+					jsons[j].put("name", cmd.getName());
 					jsons[j].put("street", cmd.getStreet());
 					jsons[j].put("city", cmd.getCity());
 					jsons[j].put("zip", cmd.getZip());
 					jsons[j].put("countryCode", cmd.getCountryCode());
 					
 					final JSONObject holder = new JSONObject();
-					holder.put("type", "ClientIsMoving");
+					holder.put("type", "NewClient");
 					holder.put("command", jsons[j]);
 					
 					cmdHolders.add(holder);
@@ -268,7 +270,7 @@ public class PerformanceTest {
 			for (int i = 0; i < max_iterations; ++i) {
 				final long triggered = System.nanoTime();
 
-				api.processCommand(CommandUtils.randomClientIsMovingCommand());
+				api.processCommand(CommandUtils.randomNewClientCommand());
 		
 				responses[i] = System.nanoTime() - triggered;
 			}

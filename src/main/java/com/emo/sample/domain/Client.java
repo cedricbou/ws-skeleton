@@ -66,9 +66,13 @@ public class Client {
 		this.countryCode = countryCode;
 	}
 
-	public Client(final String clientCode, final String name) {
+	public Client(final String clientCode, final String name, final String street, final int zip, final String city, final String countryCode) {
 		this.clientCode = clientCode;
 		this.name = name;
+		this.street = street;
+		this.zip = zip;
+		this.city = city;
+		this.countryCode = countryCode;
 	}
 	
 	protected Client() {

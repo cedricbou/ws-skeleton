@@ -15,6 +15,7 @@ import org.junit.Test;
 
 import com.caucho.hessian.client.HessianProxyFactory;
 import com.emo.sample.commands.ClientIsMoving;
+import com.emo.sample.commands.NewClient;
 import com.emo.skeleton.api.CommandApi;
 import com.emo.utils.CommandUtils;
 import com.emo.utils.EmbeddedServer;
@@ -24,7 +25,9 @@ public class ClientIsMovingTest {
 	private static CommandApi api;
 
 	private static final EmbeddedServer serverManager = new EmbeddedServer();
-	
+
+	private static final NewClient newClient = new NewClient("1234", "toto", "1 rue de machin", 59000, "Lille", "FRA");
+
 	@BeforeClass
 	public static void startServer() {
 		serverManager.startServer();
@@ -37,13 +40,15 @@ public class ClientIsMovingTest {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
+		
+		api.processCommand(newClient);
 	}
 	
 	@AfterClass
 	public static void stopServer() {
 		serverManager.stopServer();
 	}
-	
+
 	private final ClientIsMoving clientIsMoving = new ClientIsMoving("1234", "4 rue de machin", "Lille", 59000, "FRA");
 	
 	@Test
@@ -53,9 +58,12 @@ public class ClientIsMovingTest {
 	
 	@Test
 	public void clientIsMovingTwiceWithHessian() {
+		final ClientIsMoving onceAgain = CommandUtils.randomClientIsMovingCommand();
+		onceAgain.setClientCode(clientIsMoving.getClientCode());
+
 		api.processCommands(new Object[] {
 				clientIsMoving,
-				CommandUtils.randomClientIsMovingCommand()
+				onceAgain
 		} );
 	}
 	
@@ -69,7 +77,9 @@ public class ClientIsMovingTest {
 	@Test
 	public void clientIsMovingTwiceWithREST() {
 		final JSONObject cmd1 = (JSONObject)JSONValue.parse(JSONValue.toJSONString(clientIsMoving));
-		final JSONObject cmd2 = (JSONObject)JSONValue.parse(JSONValue.toJSONString(CommandUtils.randomClientIsMovingCommand()));
+		final ClientIsMoving onceAgain = CommandUtils.randomClientIsMovingCommand();
+		onceAgain.setClientCode(clientIsMoving.getClientCode());
+		final JSONObject cmd2 = (JSONObject)JSONValue.parse(JSONValue.toJSONString(onceAgain));
 		
 		final JSONObject cmdHolder1 = new JSONObject();
 		cmdHolder1.put("type", "ClientIsMoving");
