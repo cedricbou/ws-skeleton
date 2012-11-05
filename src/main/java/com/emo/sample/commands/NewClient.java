@@ -2,15 +2,41 @@ package com.emo.sample.commands;
 
 import java.io.Serializable;
 
+import com.emo.sample.domain.DomainConstraints;
+
+import net.sf.oval.constraint.Length;
+import net.sf.oval.constraint.NotEmpty;
+import net.sf.oval.constraint.NotNull;
+
 public class NewClient implements Serializable {
 
 	private static final long serialVersionUID = 5555626240903469544L;
 
+	@NotNull
+	@NotEmpty
+	@Length(max=DomainConstraints.CLIENT_CODE_MAX_LENGTH)
 	private String clientCode;
+	
+	@NotNull
+	@NotEmpty
+	@Length(max=DomainConstraints.CLIENT_NAME_MAX_LENGTH)
 	private String name;
+	
+	@NotNull
+	@NotEmpty
+	@Length(max=DomainConstraints.CLIENT_STREET_MAX_LENGTH)
 	private String street;
+
+	@NotNull
+	@NotEmpty
+	@Length(max=DomainConstraints.CLIENT_CITY_MAX_LENGTH)
 	private String city;
+	
 	private int zip;
+	
+	@NotNull
+	@NotEmpty
+	@Length(min=3, max=3)
 	private String countryCode;
 
 	public NewClient(final String customerCode, final String name,

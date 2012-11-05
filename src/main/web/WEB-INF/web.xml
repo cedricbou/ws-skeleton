@@ -3,12 +3,25 @@
                       http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0" metadata-complete="true">
 
+	<filter>
+		<filter-name>HelloWorldApplication</filter-name>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>com.emo.skeleton.web.ui.WicketApplication</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>HelloWorldApplication</filter-name>
+		<url-pattern>/ui/*</url-pattern>
+	</filter-mapping>
+
 	<!-- Servlet for REST web service -->
 	<servlet>
 		<servlet-name>CommandRestServlet</servlet-name>
 		<servlet-class>com.emo.skeleton.web.ProcessCommandRestServlet</servlet-class>
 	</servlet>
-	
+
 	<!-- Servlet for REST web service -->
 	<servlet>
 		<servlet-name>CommandsRestServlet</servlet-name>

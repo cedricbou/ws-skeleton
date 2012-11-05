@@ -2,13 +2,34 @@ package com.emo.sample.commands;
 
 import java.io.Serializable;
 
+import net.sf.oval.constraint.Length;
+import net.sf.oval.constraint.NotEmpty;
+import net.sf.oval.constraint.NotNull;
+
+import com.emo.sample.domain.DomainConstraints;
+
 public class ClientIsMoving implements Serializable {
 	private static final long serialVersionUID = 1829816920962034051L;
 	
+	@NotNull
+	@NotEmpty
 	private String clientCode;
+		
+	@NotNull
+	@NotEmpty
+	@Length(max=DomainConstraints.CLIENT_STREET_MAX_LENGTH)
 	private String street;
+
+	@NotNull
+	@NotEmpty
+	@Length(max=DomainConstraints.CLIENT_CITY_MAX_LENGTH)
 	private String city;
+	
 	private int zip;
+	
+	@NotNull
+	@NotEmpty
+	@Length(min=3, max=3)
 	private String countryCode;
 
 	public ClientIsMoving() {

@@ -11,9 +11,9 @@ public class CommandUtils {
 		final String uuid = UUID.randomUUID().toString();
 		return new ClientIsMoving(uuid, 
 				"23 rue " + uuid, 
-				uuid.substring(5, 5 + (int)(Math.random() * 10)),
+				uuid.substring(5, 10 + (int)(Math.random() * 6)),
 				(int)(10000 + (Math.random() * 80000)),
-				uuid.substring(1, 3));
+				uuid.substring(1, 4));
 	}
 
 	public static NewClient randomNewClientCommand() {
@@ -21,8 +21,8 @@ public class CommandUtils {
 		return new NewClient(uuid, uuid.substring(3, 10),
 				"23 rue " + uuid, 
 				(int)(10000 + (Math.random() * 80000)),
-				uuid.substring(5, 5 + (int)(Math.random() * 10)),
-				uuid.substring(1, 3));
+				uuid.substring(5, 10 + (int)(Math.random() * 6)),
+				uuid.substring(1, 4));
 	}
 
 

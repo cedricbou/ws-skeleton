@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 import com.emo.sample.commands.NewClient;
-import com.emo.sample.handlers.NewClientHandler;
+import com.emo.sample.handlers.client.NewClientHandler;
 import com.emo.skeleton.annotations.CommandHandler;
 
 @Component
