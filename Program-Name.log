@@ -1290,3 +1290,49 @@
 2012-11-05 01:35:41,702 [main] WARN  org.hibernate.ejb.internal.EntityManagerFactoryRegistry.addEntityManagerFactory(EntityManagerFactoryRegistry.java:79) - HHH000436: Entity manager factory name (sample) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
 2012-11-05 01:35:41,724 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
 2012-11-05 01:35:41,737 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-06 00:45:04,899 [main] INFO  org.hibernate.annotations.common.Version.<clinit>(Version.java:37) - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2012-11-06 00:45:04,921 [main] INFO  org.hibernate.Version.logVersion(Version.java:41) - HHH000412: Hibernate Core {4.1.1}
+2012-11-06 00:45:04,925 [main] INFO  org.hibernate.cfg.Environment.<clinit>(Environment.java:239) - HHH000206: hibernate.properties not found
+2012-11-06 00:45:04,928 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:342) - HHH000021: Bytecode provider name : javassist
+2012-11-06 00:45:04,975 [main] INFO  org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:526) - HHH000204: Processing PersistenceUnitInfo [
+	name: sample
+	...]
+2012-11-06 00:45:05,513 [main] INFO  org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator.instantiateExplicitConnectionProvider(ConnectionProviderInitiator.java:188) - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2012-11-06 00:45:05,586 [main] INFO  org.hibernate.dialect.Dialect.<init>(Dialect.java:122) - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2012-11-06 00:45:05,627 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(TransactionFactoryInitiator.java:73) - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2012-11-06 00:45:05,635 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:48) - HHH000397: Using ASTQueryTranslatorFactory
+2012-11-06 00:45:06,546 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-06 00:45:06,582 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-06 00:46:21,168 [main] INFO  org.hibernate.annotations.common.Version.<clinit>(Version.java:37) - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2012-11-06 00:46:21,190 [main] INFO  org.hibernate.Version.logVersion(Version.java:41) - HHH000412: Hibernate Core {4.1.1}
+2012-11-06 00:46:21,194 [main] INFO  org.hibernate.cfg.Environment.<clinit>(Environment.java:239) - HHH000206: hibernate.properties not found
+2012-11-06 00:46:21,197 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:342) - HHH000021: Bytecode provider name : javassist
+2012-11-06 00:46:21,241 [main] INFO  org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:526) - HHH000204: Processing PersistenceUnitInfo [
+	name: sample
+	...]
+2012-11-06 00:46:21,769 [main] INFO  org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator.instantiateExplicitConnectionProvider(ConnectionProviderInitiator.java:188) - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2012-11-06 00:46:21,845 [main] INFO  org.hibernate.dialect.Dialect.<init>(Dialect.java:122) - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2012-11-06 00:46:21,886 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(TransactionFactoryInitiator.java:73) - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2012-11-06 00:46:21,895 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:48) - HHH000397: Using ASTQueryTranslatorFactory
+2012-11-06 00:46:22,777 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-06 00:46:22,812 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-06 00:46:22,825 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2012-11-06 00:46:23,578 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-06 00:46:23,663 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2012-11-06 00:47:00,474 [main] INFO  org.hibernate.annotations.common.Version.<clinit>(Version.java:37) - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2012-11-06 00:47:00,498 [main] INFO  org.hibernate.Version.logVersion(Version.java:41) - HHH000412: Hibernate Core {4.1.1}
+2012-11-06 00:47:00,502 [main] INFO  org.hibernate.cfg.Environment.<clinit>(Environment.java:239) - HHH000206: hibernate.properties not found
+2012-11-06 00:47:00,505 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:342) - HHH000021: Bytecode provider name : javassist
+2012-11-06 00:47:00,552 [main] INFO  org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:526) - HHH000204: Processing PersistenceUnitInfo [
+	name: sample
+	...]
+2012-11-06 00:47:01,078 [main] INFO  org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator.instantiateExplicitConnectionProvider(ConnectionProviderInitiator.java:188) - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2012-11-06 00:47:01,153 [main] INFO  org.hibernate.dialect.Dialect.<init>(Dialect.java:122) - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2012-11-06 00:47:01,191 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(TransactionFactoryInitiator.java:73) - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2012-11-06 00:47:01,200 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:48) - HHH000397: Using ASTQueryTranslatorFactory
+2012-11-06 00:47:02,123 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-06 00:47:02,155 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-06 00:47:02,167 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2012-11-06 00:47:02,911 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-06 00:47:02,987 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-06 00:47:03,029 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
