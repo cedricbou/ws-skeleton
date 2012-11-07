@@ -7,6 +7,8 @@
 	http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 	<context:component-scan base-package="com.emo" />
-		
+	
+	<bean id="wicketSpringApplication" class="com.emo.skeleton.web.ui.WicketApplication" />	
+	
 	<import resource="classpath:applicationContext-sample.xml" />
 </beans>

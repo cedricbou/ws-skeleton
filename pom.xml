@@ -221,5 +221,10 @@
 			<artifactId>wicket-core</artifactId>
 			<version>6.2.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-spring</artifactId>
+			<version>6.1.0</version>
+		</dependency>
 	</dependencies>
 </project>

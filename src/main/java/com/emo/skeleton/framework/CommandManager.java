@@ -1,5 +1,6 @@
 package com.emo.skeleton.framework;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,6 +34,10 @@ public class CommandManager {
 		}
 		
 		return command;
+	}
+	
+	public Collection<Class<?>> commandClasses() {
+		return commands.values();
 	}
 	
 	
