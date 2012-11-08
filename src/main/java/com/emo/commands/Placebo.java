@@ -2,11 +2,16 @@ package com.emo.commands;
 
 import java.io.Serializable;
 
+import com.emo.skeleton.annotations.Doc;
+
+@Doc("A fake command to test the skeleton")
 public class Placebo implements Serializable {
 
 	private static final long serialVersionUID = 6417127022021932063L;
 
 	private InnerFoo foo;
+
+	@Doc("ya know da story for bar ?")
 	private String bar;
 
 	public Placebo() {

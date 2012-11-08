@@ -1168,3 +1168,284 @@ Unable to find component with id 'editor' in [WebMarkupContainer [Component id =
 2012-11-08 23:52:52,716 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
 2012-11-08 23:52:52,745 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
 2012-11-08 23:52:52,755 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2012-11-09 00:06:01,815 [main] INFO  org.hibernate.annotations.common.Version.<clinit>(Version.java:37) - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2012-11-09 00:06:01,830 [main] INFO  org.hibernate.Version.logVersion(Version.java:41) - HHH000412: Hibernate Core {4.1.1}
+2012-11-09 00:06:01,834 [main] INFO  org.hibernate.cfg.Environment.<clinit>(Environment.java:239) - HHH000206: hibernate.properties not found
+2012-11-09 00:06:01,837 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:342) - HHH000021: Bytecode provider name : javassist
+2012-11-09 00:06:01,877 [main] INFO  org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:526) - HHH000204: Processing PersistenceUnitInfo [
+	name: sample
+	...]
+2012-11-09 00:06:02,489 [main] INFO  org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator.instantiateExplicitConnectionProvider(ConnectionProviderInitiator.java:188) - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2012-11-09 00:06:02,557 [main] INFO  org.hibernate.dialect.Dialect.<init>(Dialect.java:122) - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2012-11-09 00:06:02,595 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(TransactionFactoryInitiator.java:73) - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2012-11-09 00:06:02,603 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:48) - HHH000397: Using ASTQueryTranslatorFactory
+2012-11-09 00:06:03,667 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:06:03,695 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:06:03,706 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2012-11-09 00:06:06,973 [resin-port-8080-26] ERROR org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1432) - Unable to find component with id 'doc' in [AutoLabel [Component id = label1]]
+	Expected: 'editor:form:fields:1:editor:label1.doc'.
+	Found with similar names: 'editor:form:fields:5:editor:doc'
+2012-11-09 00:06:06,979 [resin-port-8080-26] ERROR org.apache.wicket.DefaultExceptionMapper.internalMap(DefaultExceptionMapper.java:123) - Unexpected error occurred
+Unable to find component with id 'doc' in [AutoLabel [Component id = label1]]
+	Expected: 'editor:form:fields:1:editor:label1.doc'.
+	Found with similar names: 'editor:form:fields:5:editor:doc'
+ MarkupStream: [markup = file:/C:/Users/Cedroic/workspaces/smsoip/ws-skeleton/target/classes/com/emo/skeleton/web/ui/BeanEditPanel.html
+<label class="control-label" wicket:for="edit"><wicket:label>[name]</wicket:label> : <span wicket:id="doc">a doc</span></label>, index = 5, current =  '<span wicket:id="doc">' (line 0, column 0)]
+	at org.apache.wicket.markup.MarkupStream.throwMarkupException(MarkupStream.java:526)
+	at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1433)
+	at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1553)
+	at org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1528)
+	at org.apache.wicket.MarkupContainer.onComponentTagBody(MarkupContainer.java:1482)
+	at org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.onComponentTagBody(DefaultMarkupSourcingStrategy.java:71)
+	at org.apache.wicket.Component.internalRenderComponent(Component.java:2535)
+	at org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1491)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1388)
+	at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1553)
+	at org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1528)
+	at org.apache.wicket.MarkupContainer.onComponentTagBody(MarkupContainer.java:1482)
+	at org.apache.wicket.markup.html.panel.FragmentMarkupSourcingStrategy.onComponentTagBody(FragmentMarkupSourcingStrategy.java:84)
+	at org.apache.wicket.Component.internalRenderComponent(Component.java:2535)
+	at org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1491)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1388)
+	at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1553)
+	at org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1528)
+	at org.apache.wicket.MarkupContainer.onComponentTagBody(MarkupContainer.java:1482)
+	at org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.onComponentTagBody(DefaultMarkupSourcingStrategy.java:71)
+	at org.apache.wicket.Component.internalRenderComponent(Component.java:2535)
+	at org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1491)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.markup.repeater.AbstractRepeater.renderChild(AbstractRepeater.java:107)
+	at org.apache.wicket.markup.repeater.AbstractRepeater.onRender(AbstractRepeater.java:94)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1388)
+	at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1553)
+	at org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1528)
+	at org.apache.wicket.MarkupContainer.onComponentTagBody(MarkupContainer.java:1482)
+	at org.apache.wicket.markup.html.form.Form.onComponentTagBody(Form.java:1672)
+	at org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.onComponentTagBody(DefaultMarkupSourcingStrategy.java:71)
+	at org.apache.wicket.Component.internalRenderComponent(Component.java:2535)
+	at org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1491)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1388)
+	at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1553)
+	at org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1528)
+	at org.apache.wicket.MarkupContainer.renderAssociatedMarkup(MarkupContainer.java:685)
+	at org.apache.wicket.markup.html.panel.AssociatedMarkupSourcingStrategy.renderAssociatedMarkup(AssociatedMarkupSourcingStrategy.java:76)
+	at org.apache.wicket.markup.html.panel.PanelMarkupSourcingStrategy.onComponentTagBody(PanelMarkupSourcingStrategy.java:112)
+	at org.apache.wicket.Component.internalRenderComponent(Component.java:2535)
+	at org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1491)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1388)
+	at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1553)
+	at org.apache.wicket.Page.onRender(Page.java:884)
+	at org.apache.wicket.markup.html.WebPage.onRender(WebPage.java:142)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.Page.renderPage(Page.java:1021)
+	at org.apache.wicket.request.handler.render.WebPageRenderer.renderPage(WebPageRenderer.java:116)
+	at org.apache.wicket.request.handler.render.WebPageRenderer.respond(WebPageRenderer.java:244)
+	at org.apache.wicket.core.request.handler.RenderPageRequestHandler.respond(RenderPageRequestHandler.java:165)
+	at org.apache.wicket.request.cycle.RequestCycle$HandlerExecutor.respond(RequestCycle.java:830)
+	at org.apache.wicket.request.RequestHandlerStack.execute(RequestHandlerStack.java:64)
+	at org.apache.wicket.request.cycle.RequestCycle.execute(RequestCycle.java:253)
+	at org.apache.wicket.request.cycle.RequestCycle.processRequest(RequestCycle.java:210)
+	at org.apache.wicket.request.cycle.RequestCycle.processRequestAndDetach(RequestCycle.java:281)
+	at org.apache.wicket.protocol.http.WicketFilter.processRequest(WicketFilter.java:188)
+	at org.apache.wicket.protocol.http.WicketFilter.doFilter(WicketFilter.java:245)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:89)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:156)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:289)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:838)
+	at com.caucho.network.listen.TcpSocketLink.dispatchRequest(TcpSocketLink.java:1309)
+	at com.caucho.network.listen.TcpSocketLink.handleRequest(TcpSocketLink.java:1265)
+	at com.caucho.network.listen.TcpSocketLink.handleRequestsImpl(TcpSocketLink.java:1249)
+	at com.caucho.network.listen.TcpSocketLink.handleRequests(TcpSocketLink.java:1157)
+	at com.caucho.network.listen.TcpSocketLink.handleAcceptTaskImpl(TcpSocketLink.java:956)
+	at com.caucho.network.listen.ConnectionTask.runThread(ConnectionTask.java:117)
+	at com.caucho.network.listen.ConnectionTask.run(ConnectionTask.java:93)
+	at com.caucho.network.listen.SocketLinkThreadLauncher.handleTasks(SocketLinkThreadLauncher.java:169)
+	at com.caucho.network.listen.TcpSocketAcceptThread.run(TcpSocketAcceptThread.java:61)
+	at com.caucho.env.thread2.ResinThread2.runTasks(ResinThread2.java:173)
+	at com.caucho.env.thread2.ResinThread2.run(ResinThread2.java:118)
+2012-11-09 00:07:28,300 [main] INFO  org.hibernate.annotations.common.Version.<clinit>(Version.java:37) - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2012-11-09 00:07:28,316 [main] INFO  org.hibernate.Version.logVersion(Version.java:41) - HHH000412: Hibernate Core {4.1.1}
+2012-11-09 00:07:28,320 [main] INFO  org.hibernate.cfg.Environment.<clinit>(Environment.java:239) - HHH000206: hibernate.properties not found
+2012-11-09 00:07:28,322 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:342) - HHH000021: Bytecode provider name : javassist
+2012-11-09 00:07:28,370 [main] INFO  org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:526) - HHH000204: Processing PersistenceUnitInfo [
+	name: sample
+	...]
+2012-11-09 00:07:28,979 [main] INFO  org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator.instantiateExplicitConnectionProvider(ConnectionProviderInitiator.java:188) - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2012-11-09 00:07:29,055 [main] INFO  org.hibernate.dialect.Dialect.<init>(Dialect.java:122) - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2012-11-09 00:07:29,092 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(TransactionFactoryInitiator.java:73) - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2012-11-09 00:07:29,101 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:48) - HHH000397: Using ASTQueryTranslatorFactory
+2012-11-09 00:07:30,157 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:07:30,186 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:07:30,196 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2012-11-09 00:07:32,116 [resin-port-8080-15] ERROR org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1432) - Unable to find component with id 'doc' in [StringEditor [Component id = editor]]
+	Expected: 'editor:form:fields:1:editor.doc'.
+	Found with similar names: 'editor:form:fields:5:editor:doc'
+2012-11-09 00:07:32,122 [resin-port-8080-15] ERROR org.apache.wicket.DefaultExceptionMapper.internalMap(DefaultExceptionMapper.java:123) - Unexpected error occurred
+Unable to find component with id 'doc' in [StringEditor [Component id = editor]]
+	Expected: 'editor:form:fields:1:editor.doc'.
+	Found with similar names: 'editor:form:fields:5:editor:doc'
+ MarkupStream: [markup = file:/C:/Users/Cedroic/workspaces/smsoip/ws-skeleton/target/classes/com/emo/skeleton/web/ui/BeanEditPanel.html
+<wicket:fragment wicket:id="stringEditor">
+	<span wicket:id="doc">a doc</span>
+		<label class="control-label" wicket:for="edit"><wicket:label>[name]</wicket:label></label>
+		<div class="controls">
+			<input type="text" wicket:id="edit"/>
+		</div>
+	</wicket:fragment>, index = 2, current =  '<span wicket:id="doc">' (line 0, column 0)]
+	at org.apache.wicket.markup.MarkupStream.throwMarkupException(MarkupStream.java:526)
+	at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1433)
+	at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1553)
+	at org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1528)
+	at org.apache.wicket.MarkupContainer.onComponentTagBody(MarkupContainer.java:1482)
+	at org.apache.wicket.markup.html.panel.FragmentMarkupSourcingStrategy.onComponentTagBody(FragmentMarkupSourcingStrategy.java:84)
+	at org.apache.wicket.Component.internalRenderComponent(Component.java:2535)
+	at org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1491)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1388)
+	at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1553)
+	at org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1528)
+	at org.apache.wicket.MarkupContainer.onComponentTagBody(MarkupContainer.java:1482)
+	at org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.onComponentTagBody(DefaultMarkupSourcingStrategy.java:71)
+	at org.apache.wicket.Component.internalRenderComponent(Component.java:2535)
+	at org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1491)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.markup.repeater.AbstractRepeater.renderChild(AbstractRepeater.java:107)
+	at org.apache.wicket.markup.repeater.AbstractRepeater.onRender(AbstractRepeater.java:94)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1388)
+	at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1553)
+	at org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1528)
+	at org.apache.wicket.MarkupContainer.onComponentTagBody(MarkupContainer.java:1482)
+	at org.apache.wicket.markup.html.form.Form.onComponentTagBody(Form.java:1672)
+	at org.apache.wicket.markup.html.panel.DefaultMarkupSourcingStrategy.onComponentTagBody(DefaultMarkupSourcingStrategy.java:71)
+	at org.apache.wicket.Component.internalRenderComponent(Component.java:2535)
+	at org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1491)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1388)
+	at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1553)
+	at org.apache.wicket.MarkupContainer.renderComponentTagBody(MarkupContainer.java:1528)
+	at org.apache.wicket.MarkupContainer.renderAssociatedMarkup(MarkupContainer.java:685)
+	at org.apache.wicket.markup.html.panel.AssociatedMarkupSourcingStrategy.renderAssociatedMarkup(AssociatedMarkupSourcingStrategy.java:76)
+	at org.apache.wicket.markup.html.panel.PanelMarkupSourcingStrategy.onComponentTagBody(PanelMarkupSourcingStrategy.java:112)
+	at org.apache.wicket.Component.internalRenderComponent(Component.java:2535)
+	at org.apache.wicket.MarkupContainer.onRender(MarkupContainer.java:1491)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.MarkupContainer.renderNext(MarkupContainer.java:1388)
+	at org.apache.wicket.MarkupContainer.renderAll(MarkupContainer.java:1553)
+	at org.apache.wicket.Page.onRender(Page.java:884)
+	at org.apache.wicket.markup.html.WebPage.onRender(WebPage.java:142)
+	at org.apache.wicket.Component.internalRender(Component.java:2365)
+	at org.apache.wicket.Component.render(Component.java:2293)
+	at org.apache.wicket.Page.renderPage(Page.java:1021)
+	at org.apache.wicket.request.handler.render.WebPageRenderer.renderPage(WebPageRenderer.java:116)
+	at org.apache.wicket.request.handler.render.WebPageRenderer.respond(WebPageRenderer.java:244)
+	at org.apache.wicket.core.request.handler.RenderPageRequestHandler.respond(RenderPageRequestHandler.java:165)
+	at org.apache.wicket.request.cycle.RequestCycle$HandlerExecutor.respond(RequestCycle.java:830)
+	at org.apache.wicket.request.RequestHandlerStack.execute(RequestHandlerStack.java:64)
+	at org.apache.wicket.request.cycle.RequestCycle.execute(RequestCycle.java:253)
+	at org.apache.wicket.request.cycle.RequestCycle.processRequest(RequestCycle.java:210)
+	at org.apache.wicket.request.cycle.RequestCycle.processRequestAndDetach(RequestCycle.java:281)
+	at org.apache.wicket.protocol.http.WicketFilter.processRequest(WicketFilter.java:188)
+	at org.apache.wicket.protocol.http.WicketFilter.doFilter(WicketFilter.java:245)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:89)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:156)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:289)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:838)
+	at com.caucho.network.listen.TcpSocketLink.dispatchRequest(TcpSocketLink.java:1309)
+	at com.caucho.network.listen.TcpSocketLink.handleRequest(TcpSocketLink.java:1265)
+	at com.caucho.network.listen.TcpSocketLink.handleRequestsImpl(TcpSocketLink.java:1249)
+	at com.caucho.network.listen.TcpSocketLink.handleRequests(TcpSocketLink.java:1157)
+	at com.caucho.network.listen.TcpSocketLink.handleAcceptTaskImpl(TcpSocketLink.java:956)
+	at com.caucho.network.listen.ConnectionTask.runThread(ConnectionTask.java:117)
+	at com.caucho.network.listen.ConnectionTask.run(ConnectionTask.java:93)
+	at com.caucho.network.listen.SocketLinkThreadLauncher.handleTasks(SocketLinkThreadLauncher.java:169)
+	at com.caucho.network.listen.TcpSocketAcceptThread.run(TcpSocketAcceptThread.java:61)
+	at com.caucho.env.thread2.ResinThread2.runTasks(ResinThread2.java:173)
+	at com.caucho.env.thread2.ResinThread2.run(ResinThread2.java:118)
+2012-11-09 00:09:07,347 [main] INFO  org.hibernate.annotations.common.Version.<clinit>(Version.java:37) - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2012-11-09 00:09:07,362 [main] INFO  org.hibernate.Version.logVersion(Version.java:41) - HHH000412: Hibernate Core {4.1.1}
+2012-11-09 00:09:07,366 [main] INFO  org.hibernate.cfg.Environment.<clinit>(Environment.java:239) - HHH000206: hibernate.properties not found
+2012-11-09 00:09:07,369 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:342) - HHH000021: Bytecode provider name : javassist
+2012-11-09 00:09:07,411 [main] INFO  org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:526) - HHH000204: Processing PersistenceUnitInfo [
+	name: sample
+	...]
+2012-11-09 00:09:08,036 [main] INFO  org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator.instantiateExplicitConnectionProvider(ConnectionProviderInitiator.java:188) - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2012-11-09 00:09:08,103 [main] INFO  org.hibernate.dialect.Dialect.<init>(Dialect.java:122) - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2012-11-09 00:09:08,142 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(TransactionFactoryInitiator.java:73) - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2012-11-09 00:09:08,150 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:48) - HHH000397: Using ASTQueryTranslatorFactory
+2012-11-09 00:09:09,201 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:09:09,230 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:09:09,240 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2012-11-09 00:10:21,310 [main] INFO  org.hibernate.annotations.common.Version.<clinit>(Version.java:37) - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2012-11-09 00:10:21,326 [main] INFO  org.hibernate.Version.logVersion(Version.java:41) - HHH000412: Hibernate Core {4.1.1}
+2012-11-09 00:10:21,329 [main] INFO  org.hibernate.cfg.Environment.<clinit>(Environment.java:239) - HHH000206: hibernate.properties not found
+2012-11-09 00:10:21,332 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:342) - HHH000021: Bytecode provider name : javassist
+2012-11-09 00:10:21,373 [main] INFO  org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:526) - HHH000204: Processing PersistenceUnitInfo [
+	name: sample
+	...]
+2012-11-09 00:10:22,015 [main] INFO  org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator.instantiateExplicitConnectionProvider(ConnectionProviderInitiator.java:188) - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2012-11-09 00:10:22,085 [main] INFO  org.hibernate.dialect.Dialect.<init>(Dialect.java:122) - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2012-11-09 00:10:22,125 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(TransactionFactoryInitiator.java:73) - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2012-11-09 00:10:22,142 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:48) - HHH000397: Using ASTQueryTranslatorFactory
+2012-11-09 00:10:23,219 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:10:23,248 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:10:23,260 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2012-11-09 00:13:24,000 [main] INFO  org.hibernate.annotations.common.Version.<clinit>(Version.java:37) - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2012-11-09 00:13:24,015 [main] INFO  org.hibernate.Version.logVersion(Version.java:41) - HHH000412: Hibernate Core {4.1.1}
+2012-11-09 00:13:24,019 [main] INFO  org.hibernate.cfg.Environment.<clinit>(Environment.java:239) - HHH000206: hibernate.properties not found
+2012-11-09 00:13:24,022 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:342) - HHH000021: Bytecode provider name : javassist
+2012-11-09 00:13:24,061 [main] INFO  org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:526) - HHH000204: Processing PersistenceUnitInfo [
+	name: sample
+	...]
+2012-11-09 00:13:24,678 [main] INFO  org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator.instantiateExplicitConnectionProvider(ConnectionProviderInitiator.java:188) - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2012-11-09 00:13:24,747 [main] INFO  org.hibernate.dialect.Dialect.<init>(Dialect.java:122) - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2012-11-09 00:13:24,783 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(TransactionFactoryInitiator.java:73) - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2012-11-09 00:13:24,792 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:48) - HHH000397: Using ASTQueryTranslatorFactory
+2012-11-09 00:13:25,941 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:13:25,969 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:13:25,980 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2012-11-09 00:14:28,196 [main] INFO  org.hibernate.annotations.common.Version.<clinit>(Version.java:37) - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2012-11-09 00:14:28,212 [main] INFO  org.hibernate.Version.logVersion(Version.java:41) - HHH000412: Hibernate Core {4.1.1}
+2012-11-09 00:14:28,215 [main] INFO  org.hibernate.cfg.Environment.<clinit>(Environment.java:239) - HHH000206: hibernate.properties not found
+2012-11-09 00:14:28,218 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:342) - HHH000021: Bytecode provider name : javassist
+2012-11-09 00:14:28,257 [main] INFO  org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:526) - HHH000204: Processing PersistenceUnitInfo [
+	name: sample
+	...]
+2012-11-09 00:14:28,866 [main] INFO  org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator.instantiateExplicitConnectionProvider(ConnectionProviderInitiator.java:188) - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2012-11-09 00:14:28,933 [main] INFO  org.hibernate.dialect.Dialect.<init>(Dialect.java:122) - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2012-11-09 00:14:28,969 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(TransactionFactoryInitiator.java:73) - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2012-11-09 00:14:28,978 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:48) - HHH000397: Using ASTQueryTranslatorFactory
+2012-11-09 00:14:30,028 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:14:30,056 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:14:30,067 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2012-11-09 00:18:10,129 [main] INFO  org.hibernate.annotations.common.Version.<clinit>(Version.java:37) - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2012-11-09 00:18:10,144 [main] INFO  org.hibernate.Version.logVersion(Version.java:41) - HHH000412: Hibernate Core {4.1.1}
+2012-11-09 00:18:10,148 [main] INFO  org.hibernate.cfg.Environment.<clinit>(Environment.java:239) - HHH000206: hibernate.properties not found
+2012-11-09 00:18:10,150 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:342) - HHH000021: Bytecode provider name : javassist
+2012-11-09 00:18:10,191 [main] INFO  org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:526) - HHH000204: Processing PersistenceUnitInfo [
+	name: sample
+	...]
+2012-11-09 00:18:10,801 [main] INFO  org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator.instantiateExplicitConnectionProvider(ConnectionProviderInitiator.java:188) - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2012-11-09 00:18:10,867 [main] INFO  org.hibernate.dialect.Dialect.<init>(Dialect.java:122) - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2012-11-09 00:18:10,906 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator.initiateService(TransactionFactoryInitiator.java:73) - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2012-11-09 00:18:10,915 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:48) - HHH000397: Using ASTQueryTranslatorFactory
+2012-11-09 00:18:11,994 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:18:12,025 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT; ''
+2012-11-09 00:18:12,036 [main] DEBUG org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:106) - Adding transactional method 'handle' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''

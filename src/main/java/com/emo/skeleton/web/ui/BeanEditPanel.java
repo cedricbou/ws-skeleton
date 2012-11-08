@@ -2,6 +2,7 @@ package com.emo.skeleton.web.ui;
 
 import java.beans.PropertyDescriptor;
 import java.io.Serializable;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -24,6 +25,8 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 
+import com.emo.skeleton.annotations.Doc;
+
 /**
  * Provides basic bean editing functionality. It's intended that you modify this
  * class to suit your particular requirements - this is just an example.
@@ -39,6 +42,15 @@ import org.apache.wicket.model.PropertyModel;
 public abstract class BeanEditPanel extends Panel {
 	public BeanEditPanel(String id, Serializable toEdit) {
 		super(id);
+		
+		Doc doc = toEdit.getClass().getAnnotation(Doc.class);
+		
+		String docTxt = "";
+		if(doc != null) {
+			docTxt = doc.value();
+		}
+		
+		add(new Label("doc", docTxt));
 		add(new Label("commandName", toEdit.getClass().getSimpleName()));
 
 		Form<BeanEditPanel> form = new Form<BeanEditPanel>("form") {
@@ -125,21 +137,27 @@ public abstract class BeanEditPanel extends Panel {
 		IModel<String> labelModel = new Model<String>(name);
 
 		boolean required = findAnnotationWithClass(annotations, Required.class) != null;
+		Annotation doc = findAnnotationWithClass(annotations, Doc.class);
+		
+		String docText = "";
+		if(doc != null) { docText = ((Doc)doc).value(); }
 
+		IModel<String> modelDoc = new Model<String>(docText);
+		
 		if (String.class.isAssignableFrom(type)) {
 			IModel<String> model = new PropertyModel<String>(toEdit, name);
 			// Check for @Required on the field.
-			return new StringEditor("editor", model, labelModel, required);
+			return new StringEditor("editor", model, labelModel, modelDoc, required);
 		} else if (Boolean.class.isAssignableFrom(type)
 				|| boolean.class.isAssignableFrom(type)) {
 			IModel<Boolean> model = new PropertyModel<Boolean>(toEdit, name);
-			return new BooleanEditor("editor", model, labelModel);
+			return new BooleanEditor("editor", model, labelModel, modelDoc);
 		} else if (Number.class.isAssignableFrom(type)
 				|| float.class.isAssignableFrom(type)
 				|| long.class.isAssignableFrom(type)
 				|| int.class.isAssignableFrom(type)) {
 			IModel<Number> model = new PropertyModel<Number>(toEdit, name);
-			return new NumberEditor("editor", model, labelModel, required);
+			return new NumberEditor("editor", model, labelModel, modelDoc, required);
 		} else if (Enum.class.isAssignableFrom(type)) {
 			// Dig out other enum choices from the type of enum that it is.
 			IModel<Enum> model = new PropertyModel<Enum>(toEdit, name);
@@ -150,7 +168,7 @@ public abstract class BeanEditPanel extends Panel {
 					return Arrays.asList((Enum[]) (type.getEnumConstants()));
 				}
 			};
-			return new EnumEditor("editor", model, labelModel, enumChoices);
+			return new EnumEditor("editor", model, labelModel, enumChoices, modelDoc);
 		} else {
 			throw new RuntimeException("Type " + type + " not supported.");
 		}
@@ -172,8 +190,9 @@ public abstract class BeanEditPanel extends Panel {
 
 	private class StringEditor extends Fragment {
 		public StringEditor(String id, IModel<String> model,
-				IModel<String> labelModel, boolean required) {
+				IModel<String> labelModel, IModel<String> doc, boolean required) {
 			super(id, "stringEditor", BeanEditPanel.this);
+			add(new Label("doc", doc));
 			add(new TextField<String>("edit", model).setLabel(labelModel)
 					.setRequired(required));
 		}
@@ -181,8 +200,9 @@ public abstract class BeanEditPanel extends Panel {
 
 	private class NumberEditor extends Fragment {
 		public NumberEditor(String id, IModel<Number> model,
-				IModel<String> labelModel, boolean required) {
+				IModel<String> labelModel, IModel<String> doc, boolean required) {
 			super(id, "numberEditor", BeanEditPanel.this);
+			add(new Label("doc", doc));
 			add(new TextField<Number>("edit", model).setLabel(labelModel)
 					.setRequired(required));
 		}
@@ -190,8 +210,9 @@ public abstract class BeanEditPanel extends Panel {
 
 	private class BooleanEditor extends Fragment {
 		public BooleanEditor(String id, IModel<Boolean> model,
-				IModel<String> labelModel) {
+				IModel<String> labelModel, IModel<String> doc) {
 			super(id, "booleanEditor", BeanEditPanel.this);
+			add(new Label("doc", doc));
 			add(new Label("name", labelModel));
 			add(new CheckBox("edit", model).setLabel(labelModel));
 		}
@@ -199,8 +220,9 @@ public abstract class BeanEditPanel extends Panel {
 
 	private class EnumEditor extends Fragment {
 		public EnumEditor(String id, IModel<Enum> model,
-				IModel<String> labelModel, IModel<List<Enum>> choices) {
+				IModel<String> labelModel, IModel<List<Enum>> choices, IModel<String> doc) {
 			super(id, "enumEditor", BeanEditPanel.this);
+			add(new Label("doc", doc));
 			add(new DropDownChoice<Enum>("edit", model, choices)
 					.setLabel(labelModel));
 		}
