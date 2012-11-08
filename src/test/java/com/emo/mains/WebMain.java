@@ -11,7 +11,6 @@ public class WebMain {
 	public static void main(String[] args) throws InterruptedException {
 		final EmbeddedServer server = new EmbeddedServer();
 		server.startServer();
-		Thread.sleep(300000);
 	}
 
 }

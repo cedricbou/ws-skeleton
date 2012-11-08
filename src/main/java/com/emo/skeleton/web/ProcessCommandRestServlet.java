@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.lang.reflect.Method;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,15 +12,20 @@ import javax.servlet.http.HttpServletResponse;
 import net.minidev.json.JSONValue;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.emo.skeleton.framework.CommandDispatcher;
 import com.emo.skeleton.framework.CommandManager;
 
 @SuppressWarnings("serial")
-@WebServlet("/commands/rest/**")
 public class ProcessCommandRestServlet extends HttpServlet {
 
-	private ApplicationContext ctx = ApplicationContextSingleton.get();
+	public ProcessCommandRestServlet() {
+		super();
+		ctx = WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+	}
+
+	private final ApplicationContext ctx;
 
 	private CommandDispatcher app() {
 		return ctx.getBean(CommandDispatcher.class);

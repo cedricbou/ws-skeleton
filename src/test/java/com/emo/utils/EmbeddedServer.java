@@ -18,15 +18,14 @@ public class EmbeddedServer {
 		HttpEmbed http = new HttpEmbed(8080);
 		server.addPort(http);
 
-		WebAppEmbed webApp = new WebAppEmbed("/", "src/main/web");
+		WebAppEmbed webApp = new WebAppEmbed("/", "src/main/webapp");
 		server.addWebApp(webApp);
 
 		server.start();
+		server.join();
 	}
-	
+
 	public void stopServer() {
 		server.stop();
 	}
-
-
 }
