@@ -1,1 +1,1 @@
-web:    java -cp target/classes:target/dependencies/* com.emo.mains.WebMain
+web:    java $JAVA_OPTS -jar target/dependency/jetty-runner.jar --port $PORT target/*.war

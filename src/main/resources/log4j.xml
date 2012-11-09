@@ -38,6 +38,5 @@
     <root>
         <priority value ="warn" />
         <appender-ref ref="console" />
-        <appender-ref ref="rolling-file" />
     </root>
 </log4j:configuration>
