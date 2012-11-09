@@ -9,4 +9,7 @@ target
 .settings
 .classpath
 .project
+resin-data
+work
+
 
