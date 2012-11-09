@@ -22,9 +22,13 @@ public class EmbeddedServer {
 		server.addWebApp(webApp);
 
 		server.start();
-		server.join();
+		// server.join();
 	}
 
+	public void awaitServer() {
+		server.join();
+	}
+	
 	public void stopServer() {
 		server.stop();
 	}
