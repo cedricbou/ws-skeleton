@@ -39,11 +39,21 @@
 		<servlet-class>com.emo.skeleton.web.ProcessCommandRestServlet</servlet-class>
 	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>CommandRestServlet</servlet-name>
+		<url-pattern>/commands/rest/*</url-pattern>
+	</servlet-mapping>
+
 	<!-- Servlet for REST web service -->
 	<servlet>
 		<servlet-name>CommandsRestServlet</servlet-name>
 		<servlet-class>com.emo.skeleton.web.ProcessCommandsRestServlet</servlet-class>
 	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CommandsRestServlet</servlet-name>
+		<url-pattern>/commands/rest/batch</url-pattern>
+	</servlet-mapping>
 
 	<!-- Servlet for Hessian web services -->
 	<servlet>

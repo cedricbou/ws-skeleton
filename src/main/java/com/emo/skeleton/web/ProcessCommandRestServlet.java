@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,12 +21,13 @@ import com.emo.skeleton.framework.CommandManager;
 @SuppressWarnings("serial")
 public class ProcessCommandRestServlet extends HttpServlet {
 
-	public ProcessCommandRestServlet() {
-		super();
-		ctx = WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		ctx =  WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
 	}
-
-	private final ApplicationContext ctx;
+	
+	private ApplicationContext ctx;
 
 	private CommandDispatcher app() {
 		return ctx.getBean(CommandDispatcher.class);

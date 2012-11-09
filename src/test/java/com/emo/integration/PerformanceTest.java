@@ -17,6 +17,7 @@ import net.minidev.json.JSONObject;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.caucho.hessian.client.HessianProxyFactory;
@@ -28,6 +29,7 @@ import com.yammer.metrics.Metrics;
 import com.yammer.metrics.core.Histogram;
 import com.yammer.metrics.core.MetricName;
 
+@Ignore("not relevant in mainstream tests")
 public class PerformanceTest {
 
 	private static final EmbeddedServer server = new EmbeddedServer();

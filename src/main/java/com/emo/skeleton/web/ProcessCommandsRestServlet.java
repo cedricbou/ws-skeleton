@@ -22,11 +22,11 @@ import com.emo.skeleton.framework.CommandManager;
 @SuppressWarnings("serial")
 public class ProcessCommandsRestServlet extends HttpServlet {
 
-	private final ApplicationContext ctx;
-	
-	public ProcessCommandsRestServlet(){
-		super();
-		ctx = WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+	private ApplicationContext ctx;
+
+	@Override
+	public void init(javax.servlet.ServletConfig config) throws ServletException {
+		ctx = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
 	}
 	
 	private CommandDispatcher app() {

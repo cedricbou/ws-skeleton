@@ -1,5 +1,8 @@
 package com.emo.skeleton.web;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -9,17 +12,14 @@ import com.emo.skeleton.framework.CommandDispatcher;
 
 @SuppressWarnings("serial")
 public class CommandHessianServlet extends HessianServlet implements CommandApi {
-
-	public CommandHessianServlet() {
-		super();
-		ctx = WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+	
+	@Override
+	public void init(ServletConfig sc) throws ServletException {
+		super.init(sc);
+		ctx = WebApplicationContextUtils.getWebApplicationContext(sc.getServletContext());
 	}
 	
-	private final ApplicationContext ctx;
-	
-	public CommandHessianServlet(final ApplicationContext ctx) {
-		this.ctx = ctx;
-	}
+	private ApplicationContext ctx;
 	
 	private CommandDispatcher app() {
 		return ctx.getBean(CommandDispatcher.class);
