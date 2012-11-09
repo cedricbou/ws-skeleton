@@ -19,20 +19,20 @@
     </appender>
 
     <logger name="org.hibernate">
-        <level value="debug" />
+        <level value="info" />
     </logger>
 
     <logger name="org.hibernate.SQL">
-        <level value="debug" />
+        <level value="info" />
     </logger>
 
     
     <logger name="org.springframework.transaction">
-        <level value="debug" />
+        <level value="info" />
     </logger>
     
     <logger name="org.springframework.orm.hibernate4.HibernateTransactionManager">
-    	<level value="debug" />
+    	<level value="info" />
     </logger>
 
     <root>
