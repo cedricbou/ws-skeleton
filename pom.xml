@@ -175,14 +175,11 @@
 			<groupId>com.yammer.metrics</groupId>
 			<artifactId>metrics-core</artifactId>
 			<version>2.1.3</version>
+			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>javolution</groupId>
-			<artifactId>javolution</artifactId>
-			<version>5.5.1</version>
-			<scope>runtime</scope>
-		</dependency>
+		<!-- <dependency> <groupId>javolution</groupId> <artifactId>javolution</artifactId> 
+			<version>5.5.1</version> <scope>runtime</scope> </dependency> -->
 
 		<dependency>
 			<groupId>commons-lang</groupId>
@@ -190,11 +187,8 @@
 			<version>2.6</version>
 		</dependency>
 
-		<dependency>
-			<groupId>it.unimi.dsi</groupId>
-			<artifactId>fastutil</artifactId>
-			<version>6.4.1</version>
-		</dependency>
+		<!-- <dependency> <groupId>it.unimi.dsi</groupId> <artifactId>fastutil</artifactId> 
+			<version>6.4.1</version> </dependency> -->
 
 		<dependency>
 			<groupId>net.minidev</groupId>
@@ -202,23 +196,15 @@
 			<version>2.0-RC2</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>10.0.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.googlecode.disruptor</groupId>
-			<artifactId>disruptor</artifactId>
-			<version>2.10.3</version>
-		</dependency>
-
+		<!-- <dependency> <groupId>com.google.guava</groupId> <artifactId>guava</artifactId> 
+			<version>10.0.1</version> </dependency> <dependency> <groupId>com.googlecode.disruptor</groupId> 
+			<artifactId>disruptor</artifactId> <version>2.10.3</version> </dependency> -->
 		<!-- J2EE -->
 		<dependency>
 			<groupId>com.caucho</groupId>
 			<artifactId>resin</artifactId>
 			<version>4.0.30</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -241,5 +227,12 @@
 			<artifactId>wicket-spring</artifactId>
 			<version>6.1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 </project>
