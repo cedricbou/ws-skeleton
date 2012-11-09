@@ -1,0 +1,1 @@
+web:    java -cp target/classes:target/dependencies/* com.emo.mains.WebMain
