@@ -4,11 +4,11 @@
 		<h4 wicket:id="doc"></h4>
 	</div>
 	<form wicket:id="form" class="form-horizontal">
+		<div wicket:id="feedback"></div>
 		<wicket:container wicket:id="fields">
 			<div wicket:id="editor" class="control-group">[editor]</div>
 		</wicket:container>
 		<input class="button" type="submit" wicket:message="value:save" />
-		<div wicket:id="feedback"></div>
 	</form>
 
 	<wicket:fragment wicket:id="booleanEditor">

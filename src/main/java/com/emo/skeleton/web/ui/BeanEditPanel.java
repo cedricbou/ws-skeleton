@@ -16,7 +16,6 @@ import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
-import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.markup.html.panel.Fragment;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.markup.repeater.RepeatingView;
@@ -26,6 +25,7 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 
 import com.emo.skeleton.annotations.Doc;
+import com.emo.skeleton.web.ui.TBSFeedbackPanel.FeedbackMessage;
 
 /**
  * Provides basic bean editing functionality. It's intended that you modify this
@@ -40,6 +40,8 @@ import com.emo.skeleton.annotations.Doc;
  */
 @SuppressWarnings("serial")
 public abstract class BeanEditPanel extends Panel {
+	private final TBSFeedbackPanel feedbackPanel;
+	
 	public BeanEditPanel(String id, Serializable toEdit) {
 		super(id);
 		
@@ -64,7 +66,9 @@ public abstract class BeanEditPanel extends Panel {
 		RepeatingView fields = new RepeatingView("fields");
 		form.add(fields);
 
-		form.add(new FeedbackPanel("feedback"));
+		this.feedbackPanel = new TBSFeedbackPanel("feedback", new Model<FeedbackMessage>(new FeedbackMessage()));
+		this.feedbackPanel.setVisible(false);
+		form.add(feedbackPanel);
 
 		try {
 			buildFlatFormFromBean(fields, toEdit, null);
@@ -74,14 +78,22 @@ public abstract class BeanEditPanel extends Panel {
 
 	}
 
+	public void setSuccessMessage(final String success) {
+		feedbackPanel.success(success);
+		feedbackPanel.setVisible(true);
+	}
+	
+	public void setErrorMessage(final String error) {
+		feedbackPanel.error(error);
+		feedbackPanel.setVisible(true);
+	}
+	
 	private void buildFlatFormFromBean(final RepeatingView fields,
 			final Object bean, final String propNameRoot) throws NoSuchFieldException, SecurityException {
 		final PropertyDescriptor[] descs = PropertyUtils
 				.getPropertyDescriptors(bean);
 
 		for (PropertyDescriptor prop : descs) {
-			System.out.println("===> " + prop.getName());
-
 			if (prop.getName().equals("class")) {
 				continue;
 			}
@@ -192,7 +204,7 @@ public abstract class BeanEditPanel extends Panel {
 		public StringEditor(String id, IModel<String> model,
 				IModel<String> labelModel, IModel<String> doc, boolean required) {
 			super(id, "stringEditor", BeanEditPanel.this);
-			add(new Label("doc", doc));
+			add(new Label("doc", doc).setVisible(doc.getObject().length() > 0));
 			add(new TextField<String>("edit", model).setLabel(labelModel)
 					.setRequired(required));
 		}
@@ -202,7 +214,7 @@ public abstract class BeanEditPanel extends Panel {
 		public NumberEditor(String id, IModel<Number> model,
 				IModel<String> labelModel, IModel<String> doc, boolean required) {
 			super(id, "numberEditor", BeanEditPanel.this);
-			add(new Label("doc", doc));
+			add(new Label("doc", doc).setVisible(doc.getObject().length() > 0));
 			add(new TextField<Number>("edit", model).setLabel(labelModel)
 					.setRequired(required));
 		}
@@ -212,7 +224,7 @@ public abstract class BeanEditPanel extends Panel {
 		public BooleanEditor(String id, IModel<Boolean> model,
 				IModel<String> labelModel, IModel<String> doc) {
 			super(id, "booleanEditor", BeanEditPanel.this);
-			add(new Label("doc", doc));
+			add(new Label("doc", doc).setVisible(doc.getObject().length() > 0));
 			add(new Label("name", labelModel));
 			add(new CheckBox("edit", model).setLabel(labelModel));
 		}
@@ -222,7 +234,7 @@ public abstract class BeanEditPanel extends Panel {
 		public EnumEditor(String id, IModel<Enum> model,
 				IModel<String> labelModel, IModel<List<Enum>> choices, IModel<String> doc) {
 			super(id, "enumEditor", BeanEditPanel.this);
-			add(new Label("doc", doc));
+			add(new Label("doc", doc).setVisible(doc.getObject().length() > 0));
 			add(new DropDownChoice<Enum>("edit", model, choices)
 					.setLabel(labelModel));
 		}

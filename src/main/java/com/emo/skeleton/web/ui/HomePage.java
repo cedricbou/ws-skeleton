@@ -9,6 +9,7 @@ import net.minidev.json.JSONValue;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
+import com.emo.skeleton.api.CommandApi;
 import com.emo.skeleton.framework.CommandManager;
 import com.emo.skeleton.web.ui.CommandListPanel.CommandEntry;
 
@@ -17,6 +18,9 @@ public class HomePage extends WebPage {
 
 	@SpringBean
 	private CommandManager commandManager;
+	
+	@SpringBean
+	private CommandApi commandApi;
 
 	private List<Serializable> commands = new ArrayList<Serializable>();
 
@@ -46,7 +50,14 @@ public class HomePage extends WebPage {
 
 						@Override
 						protected void onSubmit() {
-							System.out.println(JSONValue.toJSONString(command));
+							final String json = JSONValue.toJSONString(command);
+							try {
+								commandApi.processCommand(command);
+								currentBeanPanel.setSuccessMessage("done : " + json);
+							} catch(Exception e) {
+								currentBeanPanel.setErrorMessage(e.getMessage());
+								e.printStackTrace();
+							}
 						}
 					});
 				} else {
