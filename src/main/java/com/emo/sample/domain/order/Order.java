@@ -80,7 +80,14 @@ public class Order {
 	 * ------------ getters -------------------
 	 * 
 	 */
+	public String getOrderCode() {
+		return orderCode;
+	}
 	
+	public OrderState getState() {
+		return state;
+	}
+		
 	public List<OrderLine> getLines() {
 		return lines;
 	}
