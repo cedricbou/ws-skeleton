@@ -1,6 +1,5 @@
 package com.emo.skeleton.framework;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
@@ -15,13 +14,12 @@ public class JpaViewExecutor {
 	@PersistenceContext
 	private EntityManager em;
 	
-	@SuppressWarnings("unchecked")
-	public <T> List<T> queryView(final String jpql, T viewObject, final Map<String, String> props) {
+	public Object queryView(final String jpql, final Map<String, Object> props) {
 		final Query query = em.createQuery(jpql);
 		for(final String name : props.keySet()) {
 			query.setParameter(name, props.get(name));
 		}
 		
-		return (List<T>)query.getResultList();
+		return query.getResultList();
 	}
 }

@@ -50,6 +50,14 @@ public class Order {
 		onLineAdded(new LineAdded(nextLineId(), item, price));
 	}
 	
+	public float total() {
+		float sum = 0.0f;
+		for(final OrderLine line : getLines()) {
+			sum += line.getPrice().getPrice();
+		}
+		return sum;
+	}
+	
 	public void open() {
 		if( !state.allowOpening ) {
 			throw new IllegalStateException("open not permitted for order in status " + state);
@@ -82,6 +90,10 @@ public class Order {
 	 */
 	public String getOrderCode() {
 		return orderCode;
+	}
+	
+	public String getForCustomerCode() {
+		return forCustomerCode;
 	}
 	
 	public OrderState getState() {

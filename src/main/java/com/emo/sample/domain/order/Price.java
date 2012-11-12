@@ -15,6 +15,10 @@ public class Price {
 		
 	}
 	
+	public float getPrice() {
+		return price;
+	}
+	
 	public Price(final float price) {
 		this(price, CurrencyCode.EUR);
 	}

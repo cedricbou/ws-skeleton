@@ -10,23 +10,24 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.emo.sample.views.OrderItemView;
 import com.emo.skeleton.annotations.JpaView;
 import com.emo.skeleton.framework.JpaViewExecutor;
+import com.emo.skeleton.framework.ViewManager;
 
 @Controller
 @RequestMapping("views")
 public class RequestViewController {
 
 	@Inject
-	JpaViewExecutor viewExecutor;
+	private JpaViewExecutor viewExecutor;
 
 	@Inject
-	OrderItemView orderItemView;
+	private ViewManager viewManager;
 
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
@@ -34,23 +35,20 @@ public class RequestViewController {
 		return Arrays.asList(new String[] { "OrderItemView" });
 	}
 
-	@RequestMapping(value = "/OrderItemView", method = RequestMethod.GET)
+	@RequestMapping(value = "/{viewName}", method = RequestMethod.GET)
 	@ResponseBody
-	public final Object viewOrderItem(HttpServletRequest request) {
+	public final Object viewOrderItem(final @PathVariable("viewName") String viewName, final HttpServletRequest request) {
 		final Enumeration<String> names = request.getParameterNames();
-		final Map<String, String> findByParameters = new HashMap<String, String>();
+		final Map<String, Object> findByParameters = new HashMap<String, Object>();
 		while (names.hasMoreElements()) {
 			final String name = names.nextElement();
 			if (name.startsWith("findBy")) {
-				final String value = request.getParameter(name);
+				final Object value = (Object)request.getParameter(name);
 				findByParameters.put(name.replaceFirst("findBy", ""), value);
 			}
 		}
 
-		final JpaView jpaView = orderItemView.getClass().getAnnotation(
-				JpaView.class);
-		return viewExecutor.queryView(jpaView.value(), orderItemView,
-				findByParameters);
+		return viewManager.execute(viewName, findByParameters);
 	}
 
 }

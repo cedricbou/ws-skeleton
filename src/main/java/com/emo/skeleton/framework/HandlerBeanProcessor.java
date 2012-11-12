@@ -11,6 +11,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 import com.emo.skeleton.annotations.CommandHandler;
+import com.emo.skeleton.annotations.CustomView;
 import com.emo.skeleton.annotations.JpaView;
 
 @Component
@@ -39,6 +40,7 @@ public class HandlerBeanProcessor implements ApplicationContextAware,
 		for (final String beanName : myHandlers.keySet()) {
 			final CommandHandler annotation = applicationContext
 					.findAnnotationOnBean(beanName, CommandHandler.class);
+
 			final Object myHandler = myHandlers.get(beanName);
 
 			if (myHandler instanceof Handler<?>) {
@@ -46,7 +48,13 @@ public class HandlerBeanProcessor implements ApplicationContextAware,
 				commands.declare(annotation.value().getSimpleName(),
 						annotation.value());
 			}
+			else {
+				// TODO: add warning or error if CustomView not implementing ViewExecutor.
+			}
 		}
+
+		scanForJpaViews();
+		scanForCustomViews();
 	}
 
 	private void scanForJpaViews() {
@@ -54,11 +62,26 @@ public class HandlerBeanProcessor implements ApplicationContextAware,
 				.getBeansWithAnnotation(JpaView.class);
 
 		for (final String beanName : myViews.keySet()) {
-			final CommandHandler annotation = applicationContext
-					.findAnnotationOnBean(beanName, CommandHandler.class);
 			final Object myView = myViews.get(beanName);
+			views.declare(beanName, myView, beanName);
+		}
+	}
 
-			// views.declare(beanName, myView);
+	private void scanForCustomViews() {
+		final Map<String, Object> myViews = applicationContext
+				.getBeansWithAnnotation(CustomView.class);
+
+		for (final String beanName : myViews.keySet()) {
+			final Object myView = myViews.get(beanName);
+			final CustomView annotation = applicationContext
+					.findAnnotationOnBean(beanName, CustomView.class);
+
+			if (myView instanceof ViewExecutor<?>) {
+				views.declare(annotation.value().getSimpleName(), myView, beanName);
+			}
+			else {
+				// TODO: add warning or error if CustomView not implementing ViewExecutor.
+			}
 		}
 	}
 
