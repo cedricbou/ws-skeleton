@@ -6,8 +6,10 @@ import org.springframework.stereotype.Component;
 
 import com.emo.sample.domain.order.OrderState;
 import com.emo.skeleton.annotations.JpaView;
+import com.emo.skeleton.annotations.ViewCriteria;
 
 @JpaView("select new com.emo.sample.views.OrderItemView(o.orderCode, o.state, l.item, l.price.price) from Order o join o.lines l where o.orderCode = :OrderCode")
+@ViewCriteria("OrderCode")
 @Component
 public class OrderItemView implements Serializable {
 

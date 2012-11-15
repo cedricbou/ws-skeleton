@@ -10,7 +10,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.markup.repeater.RepeatingView;
 
 @SuppressWarnings("serial")
-public class CommandListPanel extends Panel {
+public class CommandOrQueryListPanel extends Panel {
 
 	private int currentIndex = 0;
 	
@@ -30,7 +30,7 @@ public class CommandListPanel extends Panel {
 		}
 	}
 	
-	public CommandListPanel(String id, List<CommandEntry> commandEntries) {
+	public CommandOrQueryListPanel(String id, List<CommandEntry> commandEntries) {
 		super(id);
 		
 		RepeatingView commands = new RepeatingView("commands");

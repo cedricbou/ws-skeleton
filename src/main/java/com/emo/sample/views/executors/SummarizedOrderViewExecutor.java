@@ -14,9 +14,11 @@ import com.emo.sample.domain.order.Order;
 import com.emo.sample.domain.order.OrderRepository;
 import com.emo.sample.views.SummarizedOrderView;
 import com.emo.skeleton.annotations.CustomView;
+import com.emo.skeleton.annotations.ViewCriteria;
 import com.emo.skeleton.framework.ViewExecutor;
 
 @CustomView(SummarizedOrderView.class)
+@ViewCriteria({"OrderCode"})
 @Component
 public class SummarizedOrderViewExecutor implements ViewExecutor<SummarizedOrderView> {
 

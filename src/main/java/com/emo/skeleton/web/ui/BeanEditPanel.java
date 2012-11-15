@@ -1,12 +1,13 @@
 package com.emo.skeleton.web.ui;
 
 import java.beans.PropertyDescriptor;
-import java.io.Serializable;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.wicket.Component;
@@ -40,20 +41,13 @@ import com.emo.skeleton.web.ui.TBSFeedbackPanel.FeedbackMessage;
  */
 @SuppressWarnings("serial")
 public abstract class BeanEditPanel extends Panel {
-	private final TBSFeedbackPanel feedbackPanel;
+	private TBSFeedbackPanel feedbackPanel;
 	
-	public BeanEditPanel(String id, Serializable toEdit) {
-		super(id);
-		
-		Doc doc = toEdit.getClass().getAnnotation(Doc.class);
-		
-		String docTxt = "";
-		if(doc != null) {
-			docTxt = doc.value();
-		}
-		
-		add(new Label("doc", docTxt));
-		add(new Label("commandName", toEdit.getClass().getSimpleName()));
+	private ResultPanel results;
+	
+	private Form constructBaseBeanPanelForm(final String title, final String titleDoc) {
+		add(new Label("doc", titleDoc));
+		add(new Label("commandName", title));
 
 		Form<BeanEditPanel> form = new Form<BeanEditPanel>("form") {
 			@Override
@@ -63,12 +57,62 @@ public abstract class BeanEditPanel extends Panel {
 		};
 		add(form);
 
-		RepeatingView fields = new RepeatingView("fields");
-		form.add(fields);
-
 		this.feedbackPanel = new TBSFeedbackPanel("feedback", new Model<FeedbackMessage>(new FeedbackMessage()));
 		this.feedbackPanel.setVisible(false);
 		form.add(feedbackPanel);
+		
+		this.results = new ResultPanel("results", Collections.EMPTY_LIST);
+		this.results.setVisible(false);
+		
+		add(results);
+		
+		return form;
+	}
+	
+	public BeanEditPanel(String id, final String viewName, final Map<String, Object> criteria) {
+		super(id);
+
+		final Form form = constructBaseBeanPanelForm(viewName, "");
+
+		RepeatingView fields = new RepeatingView("fields");
+		form.add(fields);
+
+		for(final String propName : criteria.keySet()) {
+			WebMarkupContainer row = new WebMarkupContainer(
+					fields.newChildId());
+			fields.add(row);
+			row.add(new StringEditor(id, new Model<String>() { 
+				@Override
+				public String getObject() {
+					return criteria.get(propName).toString();
+				}
+				
+				@Override
+				public void setObject(String object) {
+					criteria.put(propName, object);
+					super.setObject(object);
+				}
+				
+			}, new Model<String>(propName), new Model<String>(""), false));
+		}		
+	}
+	
+	public BeanEditPanel(String id, Object toEdit) {
+		super(id);
+		
+		Doc doc = toEdit.getClass().getAnnotation(Doc.class);
+		
+		String docTxt = "";
+		if(doc != null) {
+			docTxt = doc.value();
+		}
+		
+		final String commandName = toEdit.getClass().getSimpleName();
+		
+		final Form form = constructBaseBeanPanelForm(commandName, docTxt);
+
+		RepeatingView fields = new RepeatingView("fields");
+		form.add(fields);
 
 		try {
 			buildFlatFormFromBean(fields, toEdit, null);
@@ -88,11 +132,17 @@ public abstract class BeanEditPanel extends Panel {
 		feedbackPanel.setVisible(true);
 	}
 	
+	public void setResults(final List<String> results) {
+		final ResultPanel panel = new ResultPanel("results", results);
+		this.results.replaceWith(panel);
+		this.results = panel;
+	}
+	
 	private void buildFlatFormFromBean(final RepeatingView fields,
 			final Object bean, final String propNameRoot) throws NoSuchFieldException, SecurityException {
 		final PropertyDescriptor[] descs = PropertyUtils
 				.getPropertyDescriptors(bean);
-
+		
 		for (PropertyDescriptor prop : descs) {
 			if (prop.getName().equals("class")) {
 				continue;

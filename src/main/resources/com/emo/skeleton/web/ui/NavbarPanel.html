@@ -1,0 +1,29 @@
+<wicket:panel>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse"
+					data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span>
+				</a>
+
+				<!-- Be sure to leave the brand out there if you want it shown -->
+				<a class="brand" href="#">Skeleton Auto UI</a>
+
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<!-- .nav, .navbar-search, .navbar-form, etc -->
+					<ul class="nav">
+						<li wicket:id="commandsLi" class="active"><a
+							wicket:id="commandsLink" href="#">Commands</a></li>
+						<li wicket:id="queriesLi"><a wicket:id="queriesLink" href="#">Queries</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</wicket:panel>
