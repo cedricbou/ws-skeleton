@@ -80,7 +80,6 @@ public class HomePage extends WebPage {
 			queryBeanPanels.add(new BeanEditPanel("editor", view, criteria) {
 				@Override
 				protected void onSubmit() {
-					MapUtils.debugPrint(System.out, "map", criteria);
 					final ObjectMapper mapper = new ObjectMapper();
 					try {
 						final List results = (List)viewManager.execute(view, criteria);
