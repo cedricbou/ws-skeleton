@@ -9,7 +9,6 @@ import java.util.Map;
 
 import net.minidev.json.JSONValue;
 
-import org.apache.commons.collections.MapUtils;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.codehaus.jackson.map.ObjectMapper;
