@@ -24,9 +24,6 @@ import com.emo.skeleton.framework.ViewManager;
 public class RequestViewController {
 
 	@Inject
-	private JpaViewExecutor viewExecutor;
-
-	@Inject
 	private ViewManager viewManager;
 
 	@RequestMapping(method = RequestMethod.GET)
