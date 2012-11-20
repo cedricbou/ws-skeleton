@@ -15,6 +15,27 @@ The skeleton provides automatically a REST web service (GET) which execute the r
 
 For testing easily, an UI is automatically available. The UI for now is just a prototype and still has many flaws. For example it has limited support for nested objects in commands, and no support for list or arrays in commands.
 
+Stack
+=====
+
+The project comes in fully configured with Spring 3.1, Spring MVC for Rest web services, Hibernate 4.1 with JPA, Jetty and Resin embedded server for testing. The project is ready for deployment on Heroku.
+
+Present and Future
+==================
+
+For now, the project is still in development. Some cleaning is necessary, although it is working well as a base for other projects.
+
+Some things to clean or fix :
+  - Create a proper, bug free UI, probably with Ember.js and Twitter Bootstrap.
+  - Remove old Openshift deployment junks.
+  - Replace the hand made REST command servlet, with a Spring MVC Rest Controller.
+  - Improve view (queries) usability.
+  - Transform the project into a Maven artiface.
+  - Better separation for examples and skeleton.
+
+Future :
+  - Event Sourcing support for proper CQRS.
+
 examples
 ========
 
