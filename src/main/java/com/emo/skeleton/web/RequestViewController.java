@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.emo.skeleton.annotations.JpaView;
-import com.emo.skeleton.framework.JpaViewExecutor;
 import com.emo.skeleton.framework.ViewManager;
 
 @Controller

@@ -32,7 +32,7 @@ public class ClientIsMovingTest {
 	public static void startServer() {
 		serverManager.startServer();
 		
-		final String url = "http://localhost:8080/commands/hessian";
+		final String url = "http://localhost:8080/hessian/commands";
 
 		final HessianProxyFactory factory = new HessianProxyFactory();
 		try {
@@ -70,7 +70,7 @@ public class ClientIsMovingTest {
 	@Test
 	public void clientIsMovingWithREST() {
 		given().content(JSONValue.toJSONString(clientIsMoving)).expect()
-		.body(equalTo("ok")).when().post("/commands/rest/ClientIsMoving");
+		.body(equalTo("ok")).when().post("/rest/commands/ClientIsMoving");
 
 	}
 	
@@ -94,7 +94,7 @@ public class ClientIsMovingTest {
 		commands.add(cmdHolder2);
 		
 		given().content(commands.toJSONString()).expect()
-		.body(equalTo("ok")).when().post("/commands/rest/batch");
+		.body(equalTo("ok")).when().post("/rest/commands/batch");
 	}
 
 }

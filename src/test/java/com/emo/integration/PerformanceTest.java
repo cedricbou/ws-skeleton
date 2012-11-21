@@ -175,7 +175,7 @@ public class PerformanceTest {
 				final long triggered = System.nanoTime();
 
 				given().content(json.toJSONString()).expect()
-						.body(equalTo("ok")).when().post("/commands/rest/NewClient");
+						.body(equalTo("ok")).when().post("/rest/commands/NewClient");
 
 				responses[i] = System.nanoTime() - triggered;
 			}
@@ -231,7 +231,7 @@ public class PerformanceTest {
 				final long triggered = System.nanoTime();
 
 				given().content(cmdHolders.toJSONString()).expect()
-						.body(equalTo("ok")).when().post("/commands/rest/batch");
+						.body(equalTo("ok")).when().post("/rest/commands/batch");
 
 				responses[i] = System.nanoTime() - triggered;
 			}
@@ -255,7 +255,7 @@ public class PerformanceTest {
 
 		@Override
 		public void run() {
-			final String url = "http://localhost:8080/commands/hessian";
+			final String url = "http://localhost:8080/hessian/commands";
 
 			final HessianProxyFactory factory = new HessianProxyFactory();
 			CommandApi api = null;

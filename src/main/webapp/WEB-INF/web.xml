@@ -33,36 +33,6 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-	<servlet>
-		<servlet-name>health</servlet-name>
-		<jsp-file>/health.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>health</servlet-name>
-		<url-pattern>/health</url-pattern>
-	</servlet-mapping>
-	<!-- Servlet for REST web service -->
-	<servlet>
-		<servlet-name>CommandRestServlet</servlet-name>
-		<servlet-class>com.emo.skeleton.web.ProcessCommandRestServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>CommandRestServlet</servlet-name>
-		<url-pattern>/commands/rest/*</url-pattern>
-	</servlet-mapping>
-
-	<!-- Servlet for REST web service -->
-	<servlet>
-		<servlet-name>CommandsRestServlet</servlet-name>
-		<servlet-class>com.emo.skeleton.web.ProcessCommandsRestServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>CommandsRestServlet</servlet-name>
-		<url-pattern>/commands/rest/batch</url-pattern>
-	</servlet-mapping>
-
 	<!-- Servlet for Hessian web services -->
 	<servlet>
 		<servlet-name>CommandHessianServlet</servlet-name>
@@ -70,11 +40,11 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CommandHessianServlet</servlet-name>
-		<url-pattern>/commands/hessian</url-pattern>
+		<url-pattern>/hessian/commands</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>viewServlet</servlet-name>
+		<servlet-name>restServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
@@ -84,7 +54,7 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>viewServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<servlet-name>restServlet</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 </web-app>
